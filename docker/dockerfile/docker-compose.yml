@@ -1,0 +1,17 @@
+version: "3.6"
+services:
+    mongo:
+        container_name: openresty
+        image: openresty/openresty:1.17.8.2-2-alpine-fat
+        restart: on-failure
+        volumes: 
+            - ./nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf
+            - ./home/alfa/Playground/Catatan/Openresty/conf/certs/idads.my.id/idads.crt:/etc/ssl/certs/idads.my.id/idads.crt
+            - ./home/alfa/Playground/Catatan/Openresty/conf/certs/idads.my.id/private.pem:/etc/ssl/certs/idads.my.id/private.pem
+        ports: 
+            - 80:80
+            - 443:443
+            - 8000:8000
+        
+
+    

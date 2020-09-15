@@ -16,7 +16,7 @@ sudo docker run <option> openresty/openresty:1.17.8.2-4-alpine-fat
 # -v to maps volume
 # -d to daemonize (or runing on the backgrounds)
 
-# comple command by alfa
+# complite command by alfa
 sudo docker run --name openresty -p 80:80 -d openresty/openresty:1.17.8.2-4-alpine-fat
 ```
 
@@ -28,7 +28,15 @@ include /etc/nginx/conf.d/*.conf;
 ```
 2. run openresty docker with custom nginx.conf
 ```
-sudo docker run -v /home/alfa/Playground/Catatan/Openresty/test/docker/conf.d:/etc/nginx/conf.d -p 80:80 openresty/openresty:1.17.8.2-4-alpine-fat
+sudo docker run --name openresty -v /home/alfa/Playground/Catatan/Openresty/test/docker/conf.d:/etc/nginx/conf.d -p 80:80 -d openresty/openresty:1.17.8.2-4-alpine-fat
 ```
 
+docker-compose example
+========================
+```
+cd /dockerfile
 
+#build image with docker-compose (this run on folder with there is a `docker-compose.yml` file exist)
+sudo docker-compose up -d
+
+```
