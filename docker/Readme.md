@@ -40,3 +40,25 @@ cd /dockerfile
 sudo docker-compose up -d
 
 ```
+
+Best Parctice
+==============
+for project existing very dificult for use docker container openresty because you must maps volume for :
+- ssl path
+- project path
+- php fpm path 
+- php ini
+this is dificult for manage. i sugest if project is exist install openresty on system and custom on nginx.conf directly . and you can run with `service openresty start` . this is bad but i think best practice.
+
+Bugs
+======
+configuration with redirect http to https on line here
+```
+     server_name _;
+    # redirect http to https
+    
+    if ($http_x_forwarded_proto = "http") {
+        return 301 https://$server_name$request_uri;
+    }
+```
+can't run on Mozilla but run perfect in Chrome , i don't understand why?

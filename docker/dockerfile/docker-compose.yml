@@ -6,8 +6,9 @@ services:
         restart: on-failure
         volumes: 
             - ./nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf
-            - ./home/alfa/Playground/Openresty/lua-cutom-ssl-termination/certs/idads.my.id/idads.crt:/etc/ssl/certs/idads.my.id/idads.crt
-            - ./home/alfa/Playground/Openresty/lua-cutom-ssl-termination/certs/idads.my.id/private.pem:/etc/ssl/certs/idads.my.id/private.pem
+            - /home/alfa/Playground/Openresty/lua-cutom-ssl-termination/certs/idads.my.id:/etc/ssl/certs/idads.my.id
+            - /home/alfa/Project/Website-builder-V2:/var/www/html/Website-builder-V2
+            - /run/php/php7.4-fpm.sock:/run/php/php7.4-fpm.sock
         ports: 
             - 80:80
             - 443:443
