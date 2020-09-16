@@ -6,8 +6,8 @@ services:
         restart: on-failure
         volumes: 
             - ./nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf
-            - ./home/alfa/Playground/Catatan/Openresty/conf/certs/idads.my.id/idads.crt:/etc/ssl/certs/idads.my.id/idads.crt
-            - ./home/alfa/Playground/Catatan/Openresty/conf/certs/idads.my.id/private.pem:/etc/ssl/certs/idads.my.id/private.pem
+            - ./home/alfa/Playground/Openresty/lua-cutom-ssl-termination/certs/idads.my.id/idads.crt:/etc/ssl/certs/idads.my.id/idads.crt
+            - ./home/alfa/Playground/Openresty/lua-cutom-ssl-termination/certs/idads.my.id/private.pem:/etc/ssl/certs/idads.my.id/private.pem
         ports: 
             - 80:80
             - 443:443
