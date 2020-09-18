@@ -50,7 +50,7 @@ for project existing very dificult for use docker container openresty because yo
 - php ini
 this is dificult for manage. i sugest if project is exist install openresty on system and custom on nginx.conf directly . and you can run with `service openresty start` . this is bad but i think best practice.
 
-Bugs
+Note
 ======
 configuration with redirect http to https on line here
 ```
@@ -61,4 +61,10 @@ configuration with redirect http to https on line here
         return 301 https://$server_name$request_uri;
     }
 ```
-can't run on Mozilla but run perfect in Chrome , i don't understand why?
+if code above not work you can try with
+```
+ listen 80;
+ listen [::]:80;
+ listen 443 ssl default_server;
+```
+https as default server so https is priority.
