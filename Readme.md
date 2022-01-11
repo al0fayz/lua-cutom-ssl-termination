@@ -74,5 +74,13 @@ sudo make install
 # install luarocks with apt
 apt install luarocks
 ```
+```
+Notes:
+*jika pada saat make dan make install luarocks tidak b isa anda dapat menjalankan menggunakan
+
+cd /usr/local/openresty/luajit/bin 
+./luarocks install lua-resty-auto-ssl
+
+```
 ## this example configuration is under development.
 
