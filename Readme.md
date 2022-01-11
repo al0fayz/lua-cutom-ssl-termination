@@ -41,5 +41,38 @@ export PATH
 * you can test with open your favorite browser and type `https://idads.my.id`
 (certificate on here generate by [zerossl](https://zerossl.com/) with 90 day of expired, so if certificate expired you can generate self in zerossl with other domain.)
 
+
+# auto ssl
+```
+#make folder for ssl
+sudo mkdir /etc/resty-auto-ssl
+sudo chown www-data /etc/resty-auto-ssl
+
+# install package with opm
+#look opm is exist
+opm --help
+
+#search package
+opm search 
+
+# package lua-resty-auto-ssl tidak tersedia di opm maka perlu di download menggunakan luarock
+
+#download luarocks
+wget http://luarocks.org/releases/luarocks-2.0.13.tar.gz
+
+#extract
+tar -xzvf luarocks-2.0.13.tar.gz
+
+cd luarocks-2.0.13/
+./configure --prefix=/usr/local/openresty/luajit \
+    --with-lua=/usr/local/openresty/luajit/ \
+    --lua-suffix=jit \
+    --with-lua-include=/usr/local/openresty/luajit/include/luajit-2.1
+make
+sudo make install
+
+# install luarocks with apt
+apt install luarocks
+```
 ## this example configuration is under development.
 
